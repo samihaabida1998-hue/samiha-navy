@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Architecture portfolio of Samiha Abeda Nur — architecture, visualization and AI-driven design explorations." />
+  <title>Samiha Abeda Nur — Architecture Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Back to top">SAN</a>
+    <div class="header-meta">Architecture · Visualization · AI</div>
+  </header>
+
+  <!-- Fixed side navigator: keep this on every page/section -->
+  <nav class="side-nav" aria-label="Portfolio navigation">
+    <a href="#top" data-section="top"><span>00</span><b>Intro</b></a>
+    <a href="#works" data-section="works"><span>01</span><b>Works</b></a>
+    <a href="#profile" data-section="profile"><span>02</span><b>Profile</b></a>
+    <a href="#project-01" data-section="project-01"><span>03</span><b>YOUTHSphere</b></a>
+    <a href="#project-02" data-section="project-02"><span>04</span><b>The Bay</b></a>
+    <a href="#project-03" data-section="project-03"><span>05</span><b>Skyscraper</b></a>
+    <a href="#contact" data-section="contact"><span>06</span><b>Contact</b></a>
+  </nav>
+
+  <main>
+    <!-- =========================================================
+         00 — HERO + O PORTAL + ABOUT
+         The first O in "portfolio" is #portalO.
+         ========================================================= -->
+    <section class="portal-scene" id="top">
+      <div class="portal-sticky">
+        <div class="hero-copy" id="heroCopy">
+          <p class="eyebrow">Selected architecture / 2018—2026</p>
+          <h1 class="hero-title" aria-label="A portfolio of spaces, stories and experiments">
+            A p<span class="portal-o" id="portalO">o</span>rtfolio of<br>
+            <span class="hero-thin">spaces, stories</span><br>
+            <span class="hero-accent">&amp; experiments</span>
+          </h1>
+          <p class="signature">by <strong>Samiha Abeda Nur</strong></p>
+          <div class="scroll-cue">
+            <span>Scroll through the first O</span>
+            <i></i>
+          </div>
+        </div>
+
+        <div class="about-reveal" id="aboutReveal" aria-label="About Samiha">
+          <div class="about-image-wrap">
+            <!-- EASY IMAGE CHANGE: replace assets/images/about-me.jpg -->
+            <img src="assets/images/about-me.jpg" alt="Illustration of Samiha with a cat" class="about-image" />
+            <span class="image-caption">01 / About</span>
+          </div>
+          <div class="about-copy">
+            <p class="section-index">ABOUT / SAMIHA ABEDA NUR</p>
+            <h2>
+              Architect, visualizer<br>
+              <span class="serif-thin">&amp; design explorer.</span>
+            </h2>
+            <p class="about-lead">
+              I work across architecture, spatial storytelling and visualization, with a growing focus on how artificial intelligence can reshape the way we imagine, communicate and deliver the built environment.
+            </p>
+            <p class="about-study">
+              I am pursuing a <strong>Master in AI for Architecture &amp; Business Innovation</strong> at <strong>IAAC, Barcelona</strong>, bringing architectural thinking together with emerging technology and new models of design practice.
+            </p>
+            <div class="about-tags" aria-label="Focus areas">
+              <span>Architecture</span>
+              <span>Visualization</span>
+              <span>AI + Design</span>
+              <span>Spatial Strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         01 — PROJECT GALLERY
+         Cards animate alternately from left and right.
+         ========================================================= -->
+    <section class="works section-pad" id="works">
+      <div class="section-heading reveal-up">
+        <p class="section-index">01 / SELECTED WORKS</p>
+        <h2>Projects <span class="serif-thin">in view.</span></h2>
+        <p>Academic and professional work spanning inclusive sports, hospitality, high-rise design, transport infrastructure and landscape-led leisure.</p>
+      </div>
+
+      <div class="gallery-list">
+        <a class="gallery-card from-left" href="#project-01">
+          <div class="gallery-image"><img src="assets/images/gallery-youthsphere.jpg" alt="YOUTHSphere sports institute" /></div>
+          <div class="gallery-info">
+            <span>01 · Academic</span>
+            <h3>YOUTHSphere</h3>
+            <p>Sports institute for differently abled athletes · Dinajpur</p>
+          </div>
+        </a>
+
+        <a class="gallery-card from-right" href="#project-02">
+          <div class="gallery-image"><img src="assets/images/gallery-the-bay.jpg" alt="The Bay five-star hotel" /></div>
+          <div class="gallery-info">
+            <span>02 · Academic</span>
+            <h3>The Bay</h3>
+            <p>Five-star waterfront hotel · Hatirjheel</p>
+          </div>
+        </a>
+
+        <a class="gallery-card from-left" href="#project-03">
+          <div class="gallery-image"><img src="assets/images/gallery-skyscraper.jpg" alt="Skyscraper tall building" /></div>
+          <div class="gallery-info">
+            <span>03 · Academic</span>
+            <h3>Skyscraper</h3>
+            <p>43-storey office tower · Mirpur</p>
+          </div>
+        </a>
+
+        <a class="gallery-card from-right" href="#contact">
+          <div class="gallery-image"><img src="assets/images/gallery-railway.jpg" alt="Cox's Bazar Railway Station" /></div>
+          <div class="gallery-info">
+            <span>04 · Professional</span>
+            <h3>Cox's Bazar Railway Station</h3>
+            <p>Transport architecture · Bangladesh</p>
+          </div>
+        </a>
+
+        <a class="gallery-card from-left" href="#contact">
+          <div class="gallery-image"><img src="assets/images/gallery-nirjhor.jpg" alt="Nirjhor Sports Complex" /></div>
+          <div class="gallery-info">
+            <span>05 · Professional</span>
+            <h3>Nirjhor Sports Complex</h3>
+            <p>Sports, leisure and hospitality · Savar</p>
+          </div>
+        </a>
+
+        <a class="gallery-card from-right" href="#contact">
+          <div class="gallery-image"><img src="assets/images/gallery-eco-park.jpg" alt="Chandra Mahal Eco Park" /></div>
+          <div class="gallery-info">
+            <span>06 · Professional</span>
+            <h3>Chandra Mahal Eco Park</h3>
+            <p>Eco resort and recreation landscape · Khulna</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         02 — SHORT PROFILE / CV TRANSITION
+         ========================================================= -->
+    <section class="profile section-pad" id="profile">
+      <div class="profile-intro reveal-up">
+        <p class="section-index">02 / PROFILE</p>
+        <h2>A concise view of <span class="serif-thin">how I work.</span></h2>
+      </div>
+
+      <div class="profile-grid">
+        <article class="profile-column profile-from-left">
+          <span class="yellow-rule"></span>
+          <p class="micro-label">Skills</p>
+          <h3>Design + Visualisation</h3>
+          <ul>
+            <li>Revit · AutoCAD · Rhino</li>
+            <li>SketchUp · Lumion · V-Ray</li>
+            <li>Photoshop · Illustrator · InDesign</li>
+            <li>AI-assisted design workflows</li>
+          </ul>
+        </article>
+
+        <article class="profile-column profile-from-bottom">
+          <span class="yellow-rule"></span>
+          <p class="micro-label">Education</p>
+          <h3>Architecture + AI</h3>
+          <ul>
+            <li><strong>2026—2028</strong> · MA AI for Architecture &amp; Business Innovation, IAAC</li>
+            <li><strong>2018—2023</strong> · Bachelor of Architecture, MIST</li>
+          </ul>
+        </article>
+
+        <article class="profile-column profile-from-right">
+          <span class="yellow-rule"></span>
+          <p class="micro-label">Experience</p>
+          <h3>Practice + Research</h3>
+          <ul>
+            <li>Creative Visualizer · Design Point View</li>
+            <li>Architect &amp; Creative Visualizer · Business Analytica</li>
+            <li>Teaching Assistant · MIST</li>
+            <li>Architectural Intern · VolumeZero</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="profile-actions reveal-up">
+        <a href="assets/CV_Nur.pdf" target="_blank" rel="noopener">View CV ↗</a>
+        <a href="assets/Portfolio_Architecture_25pc.pdf" target="_blank" rel="noopener">Original portfolio ↗</a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         03 — PROJECT 01
+         ========================================================= -->
+    <section class="project-chapter" id="project-01" data-project="01">
+      <div class="project-hero hero-left">
+        <div class="project-image-panel">
+          <img src="assets/images/p01-hero.jpg" alt="YOUTHSphere exterior visualization" />
+        </div>
+        <div class="project-intro-panel">
+          <p class="section-index">03 / PROJECT 01</p>
+          <h2>YOUTH<span>SPHERE</span></h2>
+          <p class="project-subtitle">Sports Institute for the Differently Abled</p>
+          <dl>
+            <div><dt>Location</dt><dd>Dinajpur, Bangladesh</dd></div>
+            <div><dt>Type</dt><dd>Thesis / Academic</dd></div>
+            <div><dt>Focus</dt><dd>Inclusive sports architecture</dd></div>
+          </dl>
+          <p class="project-summary">A dedicated sports complex designed to create accessible, high-quality environments for differently abled athletes. The design is organized around the relationship between mind, body and spirit.</p>
+          <span class="continue-line">Scroll to enter the plan</span>
+        </div>
+      </div>
+
+      <div class="plan-scroll" data-plan="p01">
+        <div class="plan-sticky">
+          <div class="plan-copy">
+            <span>01 / Spatial logic</span>
+            <h3>The project opens<br>through its <em>plan.</em></h3>
+          </div>
+          <div class="plan-frame">
+            <!-- Replace p01-plan.jpg with your preferred plan image -->
+            <img src="assets/images/p01-plan.jpg" alt="YOUTHSphere plan and spatial organization" />
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail section-pad">
+        <div class="detail-copy reveal-up">
+          <p class="section-index">DESIGN LANGUAGE</p>
+          <h3>Accessibility as a generator of form.</h3>
+          <p>The scheme combines training, competition, accommodation and social spaces through a connected campus. Large-span structures, open circulation and clear zoning support movement while giving the complex a strong public identity.</p>
+          <div class="specialties">
+            <span>Inclusive design</span><span>Sports planning</span><span>Large-span form</span><span>Campus zoning</span>
+          </div>
+        </div>
+        <figure class="detail-image detail-slide-right">
+          <img src="assets/images/p01-detail.jpg" alt="YOUTHSphere section drawing" />
+          <figcaption>Section / technical study</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         04 — PROJECT 02
+         ========================================================= -->
+    <section class="project-chapter" id="project-02" data-project="02">
+      <div class="project-hero hero-right">
+        <div class="project-image-panel">
+          <img src="assets/images/p02-hero.jpg" alt="The Bay waterfront hotel visualization" />
+        </div>
+        <div class="project-intro-panel">
+          <p class="section-index">04 / PROJECT 02</p>
+          <h2>THE <span>BAY</span></h2>
+          <p class="project-subtitle">Five-Star Waterfront Hotel</p>
+          <dl>
+            <div><dt>Location</dt><dd>Hatirjheel, Dhaka</dd></div>
+            <div><dt>Type</dt><dd>Academic</dd></div>
+            <div><dt>Focus</dt><dd>Hospitality + waterfront views</dd></div>
+          </dl>
+          <p class="project-summary">Inspired by the spatial experience of a cruise, the hotel uses fluid massing to maximize views toward the water while creating a continuous sequence of luxurious public and private spaces.</p>
+          <span class="continue-line">Scroll to enter the plan</span>
+        </div>
+      </div>
+
+      <div class="plan-scroll" data-plan="p02">
+        <div class="plan-sticky">
+          <div class="plan-copy">
+            <span>02 / View strategy</span>
+            <h3>Water defines<br>the building's <em>geometry.</em></h3>
+          </div>
+          <div class="plan-frame">
+            <img src="assets/images/p02-plan.jpg" alt="The Bay hotel plan" />
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail section-pad detail-reverse">
+        <div class="detail-copy reveal-up">
+          <p class="section-index">DESIGN LANGUAGE</p>
+          <h3>A continuous edge shaped by the lake.</h3>
+          <p>Curved volumes and stepped levels orient rooms toward the waterfront. The project balances arrival, recreation, hospitality and premium accommodation with a strong visual relationship to the site.</p>
+          <div class="specialties">
+            <span>Hospitality</span><span>View optimization</span><span>Curvilinear massing</span><span>Waterfront design</span>
+          </div>
+        </div>
+        <figure class="detail-image detail-slide-left">
+          <img src="assets/images/p02-detail.jpg" alt="The Bay architectural section and program study" />
+          <figcaption>Section / program distribution</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         05 — PROJECT 03
+         ========================================================= -->
+    <section class="project-chapter" id="project-03" data-project="03">
+      <div class="project-hero hero-left">
+        <div class="project-image-panel">
+          <img src="assets/images/p03-hero.jpg" alt="Skyscraper tower visualization" />
+        </div>
+        <div class="project-intro-panel">
+          <p class="section-index">05 / PROJECT 03</p>
+          <h2>SKY<span>SCRAPER</span></h2>
+          <p class="project-subtitle">43-Storey Office Tower</p>
+          <dl>
+            <div><dt>Location</dt><dd>Mirpur, Dhaka</dd></div>
+            <div><dt>Type</dt><dd>Academic</dd></div>
+            <div><dt>Focus</dt><dd>Biomimicry + exoskeleton</dd></div>
+          </dl>
+          <p class="project-summary">A high-rise office tower where structure and skin become one expressive exoskeleton. The outer shell carries lateral forces and releases the interior for more efficient, column-free office space.</p>
+          <span class="continue-line">Scroll to enter the plan</span>
+        </div>
+      </div>
+
+      <div class="plan-scroll" data-plan="p03">
+        <div class="plan-sticky">
+          <div class="plan-copy">
+            <span>03 / Structural idea</span>
+            <h3>The shell becomes<br>the project's <em>identity.</em></h3>
+          </div>
+          <div class="plan-frame">
+            <img src="assets/images/p03-plan.jpg" alt="Skyscraper ground floor plan" />
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail section-pad">
+        <div class="detail-copy reveal-up">
+          <p class="section-index">DESIGN LANGUAGE</p>
+          <h3>Structure, skin and nature converge.</h3>
+          <p>The biomimetic exterior creates a recognizable silhouette while opening selected areas for daylight, greenery and views. The structural logic becomes part of the architectural expression rather than a hidden system.</p>
+          <div class="specialties">
+            <span>High-rise design</span><span>Exoskeleton</span><span>Biomimicry</span><span>Office planning</span>
+          </div>
+        </div>
+        <figure class="detail-image detail-slide-right">
+          <img src="assets/images/p03-detail.jpg" alt="Skyscraper technical design study" />
+          <figcaption>Technical / façade study</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         06 — CONTACT
+         ========================================================= -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <p class="section-index reveal-up">06 / CONTACT</p>
+        <h2 class="reveal-up">Let's create something<br><span class="serif-thin">worth exploring.</span></h2>
+        <div class="contact-links reveal-up">
+          <a href="mailto:samihaabeda@gmail.com">samihaabeda@gmail.com</a>
+          <a href="tel:+4528832389">+45 28 83 23 89</a>
+        </div>
+        <div class="contact-footer">
+          <span>Samiha Abeda Nur</span>
+          <span>Architecture · Visualization · AI</span>
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

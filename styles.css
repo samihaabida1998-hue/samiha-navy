@@ -293,22 +293,9 @@ button, input, textarea { font: inherit; }
   font-weight: 600;
 }
 .about-tags span:first-child { border-color: var(--yellow); }
-.about-read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 34px;
-
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-
-  border-bottom: 2px solid var(--yellow);
-  padding-bottom: 8px;
-
-  transition: gap .3s ease;
-}
+/* =========================================================
+   READ MORE ABOUT ME BUTTON
+   ========================================================= */
 
 .about-read-more {
   appearance: none;
@@ -320,41 +307,259 @@ button, input, textarea { font: inherit; }
   align-items: center;
   gap: 16px;
 
-  
-  margin-top: 58px;
+  /* Space between the tags and Read More */
+  margin-top: 64px;
 
   color: var(--navy);
   cursor: pointer;
 
+  /* Elegant serif / italic style */
   font-family: var(--serif);
-  font-size: clamp(17px, 1.45vw, 21px);
+  font-size: clamp(18px, 1.45vw, 22px);
   font-style: italic;
   font-weight: 400;
   letter-spacing: 0.01em;
+  text-transform: none;
 
   border-bottom: 2px solid var(--yellow);
   padding-bottom: 8px;
 
   transition:
     gap 0.35s ease,
-    opacity 0.35s ease;
+    opacity 0.35s ease,
+    color 0.35s ease;
 }
 
 .about-read-more:hover {
-  gap: 26px;
+  gap: 27px;
+  opacity: 0.72;
 }
 
 .read-more-arrow {
+  display: inline-block;
+
   font-family: var(--sans);
-  font-style: normal;
   font-size: 18px;
-  transition: transform 0.4s ease;
+  font-style: normal;
+  font-weight: 400;
+
+  transition: transform 0.45s ease;
 }
 
 .about-read-more[aria-expanded="true"] .read-more-arrow {
   transform: rotate(90deg);
 }
 
+
+/* =========================================================
+   EXTENDED ABOUT
+   Hidden until Read More is clicked
+   ========================================================= */
+
+.about-more-section {
+  position: relative;
+  background: var(--white);
+  color: var(--navy);
+
+  /* Completely hidden by default */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  border-top: 0 solid transparent;
+
+  transition:
+    max-height 1.15s cubic-bezier(.22, 1, .36, 1),
+    opacity 0.55s ease,
+    padding-top 0.9s cubic-bezier(.22, 1, .36, 1),
+    padding-bottom 0.9s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* Open state */
+
+.about-more-section.is-open {
+  opacity: 1;
+  pointer-events: auto;
+
+  padding-top: clamp(90px, 10vw, 160px);
+  padding-bottom: clamp(90px, 10vw, 160px);
+
+  border-top: 1px solid var(--navy-faint);
+}
+
+
+/* ---------- Extended About heading ---------- */
+
+.about-more-heading {
+  max-width: 1150px;
+  margin-bottom: clamp(65px, 8vw, 120px);
+}
+
+.about-more-heading .section-index {
+  margin: 0 0 30px;
+  color: var(--navy-soft);
+}
+
+.about-more-heading h2 {
+  margin: 0;
+
+  font-family: var(--sans);
+  font-size: clamp(48px, 6.5vw, 105px);
+  line-height: .92;
+  letter-spacing: -.055em;
+  font-weight: 650;
+}
+
+.about-more-heading .serif-thin {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+}
+
+
+/* ---------- Extended About layout ---------- */
+
+.about-more-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, .85fr) minmax(340px, 1.15fr);
+
+  gap: clamp(60px, 10vw, 150px);
+
+  padding-top: clamp(45px, 5vw, 75px);
+
+  border-top: 1px solid var(--navy-faint);
+}
+
+
+/* Large statement on left */
+
+.about-more-intro {
+  align-self: start;
+}
+
+.about-big-text {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(27px, 3vw, 47px);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  font-weight: 300;
+
+  color: var(--navy);
+}
+
+
+/* Long About text */
+
+.about-more-writing {
+  max-width: 690px;
+}
+
+.about-more-writing p {
+  margin: 0 0 30px;
+
+  font-family: var(--sans);
+  font-size: clamp(14px, 1.05vw, 17px);
+  line-height: 1.9;
+  font-weight: 300;
+
+  color: var(--navy-soft);
+}
+
+.about-more-writing strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+
+/* Architectural-style large first letter */
+
+.about-more-writing p:first-child::first-letter {
+  float: left;
+
+  margin-top: 10px;
+  margin-right: 11px;
+
+  font-family: var(--serif);
+  font-size: 4.3em;
+  line-height: .7;
+  font-weight: 300;
+
+  color: var(--navy);
+}
+
+
+/* ---------- Interest labels ---------- */
+
+.about-more-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  margin-top: clamp(65px, 8vw, 110px);
+  padding-top: 26px;
+
+  border-top: 1px solid var(--navy-faint);
+}
+
+.about-more-bottom span {
+  border: 1px solid rgba(12, 35, 64, .18);
+
+  padding: 9px 13px;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: var(--navy);
+}
+
+.about-more-bottom span:first-child {
+  border-color: var(--yellow);
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 850px) {
+
+  .about-read-more {
+    margin-top: 45px;
+    font-size: 18px;
+  }
+
+  .about-more-section {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+
+  .about-more-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .about-more-heading {
+    margin-bottom: 60px;
+  }
+
+  .about-more-heading h2 {
+    font-size: clamp(42px, 11vw, 72px);
+  }
+
+  .about-big-text {
+    max-width: 600px;
+  }
+
+}
 /* ---------- WORKS ---------- */
 .works {
   position: relative;

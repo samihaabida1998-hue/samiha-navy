@@ -342,3 +342,71 @@ if (aboutMore) {
   });
 
 }
+/* =============================================
+   READ MORE ABOUT ME
+============================================= */
+
+const aboutReadMoreButton = document.getElementById('aboutReadMore');
+const aboutMoreSection = document.getElementById('about-more');
+
+if (aboutReadMoreButton && aboutMoreSection) {
+
+  aboutReadMoreButton.addEventListener('click', () => {
+
+    const isOpen = aboutMoreSection.classList.contains('is-open');
+
+    if (!isOpen) {
+
+      // OPEN
+      aboutMoreSection.classList.add('is-open');
+      aboutReadMoreButton.setAttribute('aria-expanded', 'true');
+
+      const text = aboutReadMoreButton.querySelector('.read-more-text');
+      text.textContent = 'Close about me';
+
+      // Dynamically calculates the height of however much text you add
+      aboutMoreSection.style.maxHeight =
+        aboutMoreSection.scrollHeight + 350 + 'px';
+
+      // Refresh GSAP positions if ScrollTrigger is being used
+      if (typeof ScrollTrigger !== 'undefined') {
+        setTimeout(() => ScrollTrigger.refresh(), 850);
+      }
+
+      // Smoothly move into the expanded content
+      setTimeout(() => {
+        aboutMoreSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 300);
+
+    } else {
+
+      // CLOSE
+      aboutMoreSection.style.maxHeight = '0px';
+      aboutMoreSection.classList.remove('is-open');
+      aboutReadMoreButton.setAttribute('aria-expanded', 'false');
+
+      const text = aboutReadMoreButton.querySelector('.read-more-text');
+      text.textContent = 'Read more about me';
+
+      if (typeof ScrollTrigger !== 'undefined') {
+        setTimeout(() => ScrollTrigger.refresh(), 850);
+      }
+    }
+
+  });
+
+
+  /* Recalculate height if screen size changes */
+  window.addEventListener('resize', () => {
+
+    if (aboutMoreSection.classList.contains('is-open')) {
+      aboutMoreSection.style.maxHeight =
+        aboutMoreSection.scrollHeight + 350 + 'px';
+    }
+
+  });
+
+}

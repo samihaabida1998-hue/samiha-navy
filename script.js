@@ -287,124 +287,259 @@
 
   window.addEventListener('load', () => ScrollTrigger.refresh());
 })();
-// Extended About section animations
-const aboutMore = document.querySelector('.about-more-section');
 
-if (aboutMore) {
-
-  gsap.from('.about-more-heading', {
-    y: 70,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: aboutMore,
-      start: 'top 80%',
-      toggleActions: 'play none none reverse'
-    }
-  });
-
-  gsap.from('.about-more-intro', {
-    x: -70,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.about-more-grid',
-      start: 'top 78%',
-      toggleActions: 'play none none reverse'
-    }
-  });
-
-  gsap.from('.about-more-writing p', {
-    x: 70,
-    opacity: 0,
-    duration: .8,
-    stagger: .12,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.about-more-writing',
-      start: 'top 78%',
-      toggleActions: 'play none none reverse'
-    }
-  });
-
-  gsap.from('.about-more-bottom span', {
-    y: 20,
-    opacity: 0,
-    duration: .5,
-    stagger: .07,
-    ease: 'power2.out',
-    scrollTrigger: {
-      trigger: '.about-more-bottom',
-      start: 'top 88%'
-    }
-  });
-
-}
 /* =============================================
    READ MORE ABOUT ME
 ============================================= */
 
-const aboutReadMoreButton = document.getElementById('aboutReadMore');
-const aboutMoreSection = document.getElementById('about-more');
+const aboutReadMoreButton =
+  document.getElementById('aboutReadMore');
+
+const aboutMoreSection =
+  document.getElementById('about-more');
 
 if (aboutReadMoreButton && aboutMoreSection) {
 
+  const readMoreText =
+    aboutReadMoreButton.querySelector('.read-more-text');
+
+
+  /* Make absolutely sure it starts closed */
+  aboutMoreSection.classList.remove('is-open');
+  aboutMoreSection.style.maxHeight = '0px';
+
+
   aboutReadMoreButton.addEventListener('click', () => {
 
-    const isOpen = aboutMoreSection.classList.contains('is-open');
+    const isOpen =
+      aboutMoreSection.classList.contains('is-open');
+
+
+    /* =========================================
+       OPEN
+    ========================================= */
 
     if (!isOpen) {
 
-      // OPEN
       aboutMoreSection.classList.add('is-open');
-      aboutReadMoreButton.setAttribute('aria-expanded', 'true');
 
-      const text = aboutReadMoreButton.querySelector('.read-more-text');
-      text.textContent = 'Close about me';
+      aboutReadMoreButton.setAttribute(
+        'aria-expanded',
+        'true'
+      );
 
-      // Dynamically calculates the height of however much text you add
-      aboutMoreSection.style.maxHeight =
-        aboutMoreSection.scrollHeight + 350 + 'px';
+      readMoreText.textContent =
+        'Close about me';
 
-      // Refresh GSAP positions if ScrollTrigger is being used
-      if (typeof ScrollTrigger !== 'undefined') {
-        setTimeout(() => ScrollTrigger.refresh(), 850);
+
+      /*
+       Calculate the full height AFTER
+       the open class has been added.
+      */
+
+      requestAnimationFrame(() => {
+
+        const fullHeight =
+          aboutMoreSection.scrollHeight;
+
+        aboutMoreSection.style.maxHeight =
+          fullHeight + 100 + 'px';
+
+      });
+
+
+      /*
+       Animate the contents only AFTER
+       the section is opened.
+      */
+
+      if (window.gsap) {
+
+        gsap.fromTo(
+          '.about-more-heading',
+          {
+            y: 55,
+            opacity: 0
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: .9,
+            ease: 'power3.out',
+            delay: .15
+          }
+        );
+
+
+        gsap.fromTo(
+          '.about-more-intro',
+          {
+            x: -60,
+            opacity: 0
+          },
+          {
+            x: 0,
+            opacity: 1,
+            duration: .9,
+            ease: 'power3.out',
+            delay: .25
+          }
+        );
+
+
+        gsap.fromTo(
+          '.about-more-writing p',
+          {
+            x: 45,
+            opacity: 0
+          },
+          {
+            x: 0,
+            opacity: 1,
+            duration: .75,
+            stagger: .09,
+            ease: 'power3.out',
+            delay: .3
+          }
+        );
+
+
+        gsap.fromTo(
+          '.about-more-bottom span',
+          {
+            y: 18,
+            opacity: 0
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: .5,
+            stagger: .06,
+            ease: 'power2.out',
+            delay: .45
+          }
+        );
+
       }
 
-      // Smoothly move into the expanded content
+
+      /*
+       Scroll gently into the expanded section.
+      */
+
       setTimeout(() => {
+
         aboutMoreSection.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
-      }, 300);
 
-    } else {
+      }, 280);
 
-      // CLOSE
-      aboutMoreSection.style.maxHeight = '0px';
-      aboutMoreSection.classList.remove('is-open');
-      aboutReadMoreButton.setAttribute('aria-expanded', 'false');
 
-      const text = aboutReadMoreButton.querySelector('.read-more-text');
-      text.textContent = 'Read more about me';
+      /*
+       Recalculate all ScrollTrigger positions
+       because the page just became taller.
+      */
 
-      if (typeof ScrollTrigger !== 'undefined') {
-        setTimeout(() => ScrollTrigger.refresh(), 850);
+      if (window.ScrollTrigger) {
+
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 1000);
+
       }
+
+    }
+
+
+    /* =========================================
+       CLOSE
+    ========================================= */
+
+    else {
+
+      /*
+       First lock the current height.
+      */
+
+      aboutMoreSection.style.maxHeight =
+        aboutMoreSection.scrollHeight + 'px';
+
+
+      /*
+       Then animate it back to zero.
+      */
+
+      requestAnimationFrame(() => {
+
+        requestAnimationFrame(() => {
+
+          aboutMoreSection.style.maxHeight =
+            '0px';
+
+          aboutMoreSection.classList.remove(
+            'is-open'
+          );
+
+        });
+
+      });
+
+
+      aboutReadMoreButton.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      readMoreText.textContent =
+        'Read more about me';
+
+
+      /*
+       Bring the visitor back to the button.
+      */
+
+      setTimeout(() => {
+
+        aboutReadMoreButton.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+
+      }, 200);
+
+
+      if (window.ScrollTrigger) {
+
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 1000);
+
+      }
+
     }
 
   });
 
 
-  /* Recalculate height if screen size changes */
+  /* =========================================
+     UPDATE HEIGHT WHEN WINDOW RESIZES
+  ========================================= */
+
   window.addEventListener('resize', () => {
 
-    if (aboutMoreSection.classList.contains('is-open')) {
+    if (
+      aboutMoreSection.classList.contains(
+        'is-open'
+      )
+    ) {
+
       aboutMoreSection.style.maxHeight =
-        aboutMoreSection.scrollHeight + 350 + 'px';
+        aboutMoreSection.scrollHeight +
+        100 +
+        'px';
+
     }
 
   });

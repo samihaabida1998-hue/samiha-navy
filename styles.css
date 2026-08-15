@@ -310,103 +310,49 @@ button, input, textarea { font: inherit; }
   transition: gap .3s ease;
 }
 
-.about-read-more:hover {
-  gap: 24px;
-}
-/* ---------- EXTENDED ABOUT ---------- */
+.about-read-more {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
 
-.about-more-section {
-  background: var(--white);
-  border-top: 1px solid var(--navy-faint);
-}
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
 
-.about-more-heading {
-  max-width: 1100px;
-  margin-bottom: 90px;
-}
-
-.about-more-heading .section-index {
-  margin-bottom: 32px;
-  color: var(--navy-soft);
-}
-
-.about-more-heading h2 {
-  margin: 0;
-
-  font-family: var(--sans);
-  font-size: clamp(52px, 6.5vw, 105px);
-  line-height: .9;
-  letter-spacing: -.055em;
-  font-weight: 650;
-}
-
-.about-more-grid {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: clamp(60px, 10vw, 160px);
-
-  padding-top: 45px;
-  border-top: 1px solid var(--navy-faint);
-}
-
-.about-big-text {
-  margin: 0;
-
-  font-family: var(--serif);
-  font-size: clamp(28px, 3vw, 48px);
-  line-height: 1.08;
-  font-weight: 300;
-}
-
-.about-more-writing {
-  max-width: 680px;
-}
-
-.about-more-writing p {
-  margin: 0 0 30px;
-
-  font-size: 15px;
-  line-height: 1.9;
-  font-weight: 300;
-  color: var(--navy-soft);
-}
-
-.about-more-writing p:first-child::first-letter {
-  font-family: var(--serif);
-  font-size: 4em;
-  line-height: .7;
-  float: left;
-
-  margin-right: 10px;
-  margin-top: 10px;
+  
+  margin-top: 58px;
 
   color: var(--navy);
+  cursor: pointer;
+
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.45vw, 21px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+
+  border-bottom: 2px solid var(--yellow);
+  padding-bottom: 8px;
+
+  transition:
+    gap 0.35s ease,
+    opacity 0.35s ease;
 }
 
-.about-more-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-
-  margin-top: 80px;
-  padding-top: 24px;
-
-  border-top: 1px solid var(--navy-faint);
+.about-read-more:hover {
+  gap: 26px;
 }
 
-.about-more-bottom span {
-  padding: 9px 13px;
-
-  border: 1px solid var(--navy-faint);
-
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+.read-more-arrow {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 18px;
+  transition: transform 0.4s ease;
 }
 
-.about-more-bottom span:first-child {
-  border-color: var(--yellow);
+.about-read-more[aria-expanded="true"] .read-more-arrow {
+  transform: rotate(90deg);
 }
 
 /* ---------- WORKS ---------- */

@@ -287,3 +287,58 @@
 
   window.addEventListener('load', () => ScrollTrigger.refresh());
 })();
+// Extended About section animations
+const aboutMore = document.querySelector('.about-more-section');
+
+if (aboutMore) {
+
+  gsap.from('.about-more-heading', {
+    y: 70,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: aboutMore,
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  gsap.from('.about-more-intro', {
+    x: -70,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.about-more-grid',
+      start: 'top 78%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  gsap.from('.about-more-writing p', {
+    x: 70,
+    opacity: 0,
+    duration: .8,
+    stagger: .12,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.about-more-writing',
+      start: 'top 78%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  gsap.from('.about-more-bottom span', {
+    y: 20,
+    opacity: 0,
+    duration: .5,
+    stagger: .07,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.about-more-bottom',
+      start: 'top 88%'
+    }
+  });
+
+}
